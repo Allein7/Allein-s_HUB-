@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Allein's Hub 🎮✨</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #a1c4fd, #c2e9fb);
+            color: #333;
+        }
+        header {
+            background-color: #4a90e2;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            font-size: 2em;
+            font-weight: bold;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #2f5dab;
+            padding: 10px 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: bold;
+            font-size: 1em;
+            transition: color 0.3s;
+        }
+        nav a:hover { color: #ffeb3b; text-decoration: underline; }
+        section {
+            text-align: center;
+            padding: 50px 20px;
+        }
+        h1 { color: #4a90e2; font-size: 2.5em; }
+        p { font-size: 1.2em; line-height: 1.5em; max-width: 800px; margin: 20px auto; }
+        footer { text-align: center; padding: 20px; background-color: #4a90e2; color: white; font-weight: bold; }
+        @media (max-width: 600px) {
+            nav { flex-direction: column; }
+            nav a { margin: 10px 0; }
+        }
+    </style>
+</head>
+<body>
+    <header>ABOUT ME 🎮✨</header>
+    <nav>
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('projects_page') }}">Projects</a>
+        <a href="{{ url_for('about') }}">About</a>
+        {% if logged_in %}
+            <a href="{{ url_for('upload') }}">Upload</a>
+            <a href="{{ url_for('logout') }}">Logout</a>
+        {% else %}
+            <a href="{{ url_for('login') }}">Login</a>
+        {% endif %}
+    </nav>
+
+    <section>
+        <h1>Hi! I’m Allein 👋</h1>
+        <p>
+            Welcome to my special hub where I share my games, mini-projects, and coding experiments. 
+            I love creating interactive games, fun experiments, and learning new tech every day! 💻🎮✨
+        </p>
+    </section>
+
+    <footer>© 2025 Allein - All rights reserved</footer>
+</body>
+</html>
